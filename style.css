@@ -1,0 +1,119 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 90vh;
+}
+
+body .pannel {
+  width: 50%;
+  height: 50%;
+  padding: 3em 0;
+}
+
+body .pannel .country-input {
+  display: block;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 41%;
+  font-size: 1.6em;
+  border: none;
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+body .pannel .country-input::-webkit-input-placeholder {
+  letter-spacing: .08em;
+}
+
+body .pannel .country-input:-ms-input-placeholder {
+  letter-spacing: .08em;
+}
+
+body .pannel .country-input::-ms-input-placeholder {
+  letter-spacing: .08em;
+}
+
+body .pannel .country-input::placeholder {
+  letter-spacing: .08em;
+}
+
+body .pannel ul {
+  list-style: none;
+  margin-top: 3em;
+  padding: 0;
+}
+
+body .pannel ul li {
+  margin: 1em 0 2em;
+  width: 100%;
+  font-size: 1.4em;
+  opacity: 0.6;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding-left: .2em;
+}
+
+body .pannel ul li .country-hl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+body .pannel ul li .country-hl .total {
+  font-size: .6em;
+}
+
+body .pannel ul li .country-hl .country .hl {
+  font-weight: 600;
+}
+
+body .pannel ul li .stats-hidden {
+  display: none;
+}
+
+body .pannel ul li .stats-visible {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  grid-auto-rows: 1fr;
+  row-gap: 1em;
+  font-size: .8em;
+  margin-top: 2em;
+}
+
+body .pannel ul li .stats-visible .value {
+  text-align: right;
+}
+
+body .pannel ul li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
