@@ -1,20 +1,73 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
     font-family: sans-serif;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+    height: 100vh;
+    width: 130vw;
+    transform: translateX(-19%);
+    transition: transform 400ms;
+
+    .hero {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .side-menu {
+        width: 30vw;
+        height: 100%;
+        background-color: black;
+
+        h1 {
+            color: white;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            text-align: left;
+            width: 80%;
+            margin: 2em auto;
+        }
+
+        ul {
+            text-transform: uppercase;
+            color: white;
+            width: 80%;
+            margin: 6em auto;
+            list-style: none;
+
+            li {
+                margin-bottom: 2em;
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+                a:hover {
+                    font-weight: 700;
+                }
+            
+            }
+
+        }
+    }
 
     .pannel {
-       width: 50%;
-       height: 50%;
-       padding: 3em 0;
-       
+        width: 50%;
+        height: 60%;
+        margin-top: 12em;
+
         .country-input {
             display: block;
             height: fit-content;
@@ -24,28 +77,26 @@ body {
             margin: 0 auto;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-
-            
+            text-align: center;
         }
 
         .country-input::placeholder {
-            letter-spacing: .08em;
+            letter-spacing: 0.08em;
         }
-    
+
         ul {
             list-style: none;
-            margin-top: 3em;
+            margin: 3em 0;
             padding: 0;
 
             li {
-                margin: 1em 0 2em;
+                margin: 1em 0;
                 width: 100%;
                 font-size: 1.4em;
                 opacity: 0.6;
-                letter-spacing: .1em;
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
-                padding-left: .2em;
-        
+                padding-left: 0.2em;
 
                 .country-hl {
                     display: flex;
@@ -54,9 +105,9 @@ body {
                     width: 100%;
 
                     .total {
-                        font-size: .6em;
+                        font-size: 0.6em;
                     }
-                
+
                     .country {
                         .hl {
                             font-weight: 600;
@@ -65,36 +116,65 @@ body {
                 }
 
                 .stats-hidden {
-                    display: none;
-                }
-
-                .stats-visible {
                     display: grid;
+                    height: auto;
+                    max-height: 0;
                     grid-template-columns: 2fr 1fr;
                     grid-auto-rows: 1fr;
                     row-gap: 1em;
-                    font-size: .8em;
-                    margin-top: 2em;
-
+                    font-size: 0.8em;
+                    overflow-y: hidden;
+                    transition: max-height 600ms, margin 1000ms;
 
                     .value {
                         text-align: right;
                     }
-
                 }
 
-                
-                
-
+                .stats-visible {
+                    max-height: 1000px;
+                    margin: 3em 0;
+                    transition: margin 400ms, max-height 800ms;
+                }
             }
 
             li:hover {
                 opacity: 1;
                 cursor: pointer;
             }
-            
         }
     }
 
-    
+    .hamburger {
+        width: 30px;
+        height: 20px;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+
+        #top,
+        #middle,
+        #bottom {
+            background-color: rgb(32, 30, 30);
+            height: 2px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+    }
+}
+
+.side-menu-open {
+    transform: translateX(0);
 }

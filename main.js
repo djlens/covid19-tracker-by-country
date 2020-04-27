@@ -1,6 +1,7 @@
 const input = document.querySelector(".country-input");
 const list = document.querySelector(".countries");
 const countries = [];
+const hamburgerMenu = document.querySelector(".hamburger")
 
 window.onload = () => {
     input.focus()
@@ -64,7 +65,10 @@ function displayStats() {
 
 }
 
-input.addEventListener('keyup', displayCountries)
+input.addEventListener('keyup', displayCountries);
+hamburgerMenu.addEventListener('click', () => {
+    document.querySelector("body").classList.toggle("side-menu-open")
+})
 
 
 

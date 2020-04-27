@@ -1,10 +1,32 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 body {
   font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 130vw;
+  -webkit-transform: translateX(-19%);
+          transform: translateX(-19%);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+body .hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,13 +40,49 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 90vh;
+}
+
+body .side-menu {
+  width: 30vw;
+  height: 100%;
+  background-color: black;
+}
+
+body .side-menu h1 {
+  color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  width: 80%;
+  margin: 2em auto;
+}
+
+body .side-menu ul {
+  text-transform: uppercase;
+  color: white;
+  width: 80%;
+  margin: 6em auto;
+  list-style: none;
+}
+
+body .side-menu ul li {
+  margin-bottom: 2em;
+}
+
+body .side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+body .side-menu ul li a:hover {
+  font-weight: 700;
 }
 
 body .pannel {
   width: 50%;
-  height: 50%;
-  padding: 3em 0;
+  height: 60%;
+  margin-top: 12em;
 }
 
 body .pannel .country-input {
@@ -38,38 +96,39 @@ body .pannel .country-input {
   margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-align: center;
 }
 
 body .pannel .country-input::-webkit-input-placeholder {
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 body .pannel .country-input:-ms-input-placeholder {
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 body .pannel .country-input::-ms-input-placeholder {
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 body .pannel .country-input::placeholder {
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 body .pannel ul {
   list-style: none;
-  margin-top: 3em;
+  margin: 3em 0;
   padding: 0;
 }
 
 body .pannel ul li {
-  margin: 1em 0 2em;
+  margin: 1em 0;
   width: 100%;
   font-size: 1.4em;
   opacity: 0.6;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding-left: .2em;
+  padding-left: 0.2em;
 }
 
 body .pannel ul li .country-hl {
@@ -86,7 +145,7 @@ body .pannel ul li .country-hl {
 }
 
 body .pannel ul li .country-hl .total {
-  font-size: .6em;
+  font-size: 0.6em;
 }
 
 body .pannel ul li .country-hl .country .hl {
@@ -94,26 +153,74 @@ body .pannel ul li .country-hl .country .hl {
 }
 
 body .pannel ul li .stats-hidden {
-  display: none;
-}
-
-body .pannel ul li .stats-visible {
   display: -ms-grid;
   display: grid;
+  height: auto;
+  max-height: 0;
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
   grid-auto-rows: 1fr;
   row-gap: 1em;
-  font-size: .8em;
-  margin-top: 2em;
+  font-size: 0.8em;
+  overflow-y: hidden;
+  -webkit-transition: max-height 600ms, margin 1000ms;
+  transition: max-height 600ms, margin 1000ms;
 }
 
-body .pannel ul li .stats-visible .value {
+body .pannel ul li .stats-hidden .value {
   text-align: right;
+}
+
+body .pannel ul li .stats-visible {
+  max-height: 1000px;
+  margin: 3em 0;
+  -webkit-transition: margin 400ms, max-height 800ms;
+  transition: margin 400ms, max-height 800ms;
 }
 
 body .pannel ul li:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+body .hamburger {
+  width: 30px;
+  height: 20px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+body .hamburger #top,
+body .hamburger #middle,
+body .hamburger #bottom {
+  background-color: #201e1e;
+  height: 2px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+body .hamburger:hover {
+  cursor: pointer;
+}
+
+.side-menu-open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 /*# sourceMappingURL=style.css.map */
