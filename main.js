@@ -1,7 +1,8 @@
 const input = document.querySelector(".country-input");
 const list = document.querySelector(".countries");
 const countries = [];
-const hamburgerMenu = document.querySelector(".hamburger")
+const hamburgerMenu = document.querySelector(".hamburger");
+const body = document.querySelector("body");
 
 window.onload = () => {
     input.focus()
@@ -10,6 +11,7 @@ window.onload = () => {
 fetch('https://api.covid19api.com/summary')
     .then(blob => blob.json())
     .then(data => countries.push(...data.Countries))
+    .catch(error => console.log('Error: ' + error.message))
 
 
 function numberWithCommas(x) {
@@ -67,8 +69,11 @@ function displayStats() {
 
 input.addEventListener('keyup', displayCountries);
 hamburgerMenu.addEventListener('click', () => {
-    document.querySelector("body").classList.toggle("side-menu-open")
+    body.classList.toggle("side-menu-open");
+    [...hamburgerMenu.children].forEach(child => child.classList.toggle('open'))
 })
+
+
 
 
 

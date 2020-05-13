@@ -53,14 +53,15 @@ body .side-menu h1 {
   font-family: sans-serif;
   text-transform: uppercase;
   text-align: left;
-  width: 80%;
+  width: 70%;
   margin: 2em auto;
+  line-height: 1.1em;
 }
 
 body .side-menu ul {
   text-transform: uppercase;
   color: white;
-  width: 80%;
+  width: 70%;
   margin: 6em auto;
   list-style: none;
 }
@@ -90,7 +91,6 @@ body .pannel .country-input {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 41%;
   font-size: 1.6em;
   border: none;
   margin: 0 auto;
