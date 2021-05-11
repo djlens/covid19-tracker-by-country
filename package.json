@@ -19,7 +19,7 @@
   "homepage": "https://github.com/djlens/covid19-tracker-by-country#readme",
   "dependencies": {
     "hamburgers": "^1.1.3",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
